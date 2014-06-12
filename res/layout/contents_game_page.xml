@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Layout_page_contents"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:keepScreenOn="true" >
+    
+	<LinearLayout
+	    android:id="@+id/Layout_play_area"
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="1"
+	    android:gravity="center"
+	    android:background="@color/white"
+	    android:orientation="vertical" >
+	    
+	    <View
+			android:id="@+id/View_red_player"
+			android:layout_width="match_parent"
+			android:layout_height="30dp"
+			android:gravity="center"
+			android:background="@color/red" />
+	    
+
+        <TableLayout
+            android:id="@+id/Layout_game_board"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:padding="10dp"
+			android:showDividers="middle"
+			android:divider="@drawable/divider_game_board_horizontal" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:showDividers="middle"
+                android:gravity="center" 
+                android:divider="@drawable/divider_game_board_vertical" >
+
+                <TextView
+                    style="?buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="boxClicked"
+                    android:textSize="50sp"
+                    android:typeface="monospace" />
+
+                <TextView
+                    style="?buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="boxClicked"
+                    android:textSize="50sp"
+                    android:typeface="monospace" />
+                
+                <TextView
+                    style="?buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="boxClicked"
+                    android:textSize="50sp"
+                    android:typeface="monospace" />
+                
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:showDividers="middle"
+                android:gravity="center" 
+                android:divider="@drawable/divider_game_board_vertical" >
+
+                <TextView
+                    style="?buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="boxClicked"
+                    android:textSize="50sp"
+                    android:typeface="monospace" />
+
+                <TextView
+                    style="?buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="boxClicked"
+                    android:textSize="50sp"
+                    android:typeface="monospace" />
+                
+                <TextView
+                    style="?buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="boxClicked"
+                    android:textSize="50sp"
+                    android:typeface="monospace" />
+                
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:showDividers="middle"
+                android:gravity="center" 
+                android:divider="@drawable/divider_game_board_vertical" >
+
+                <TextView
+                    style="?buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="boxClicked"
+                    android:textSize="50sp"
+                    android:typeface="monospace" />
+
+                <TextView
+                    style="?buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="boxClicked"
+                    android:textSize="50sp"
+                    android:typeface="monospace" />
+                
+                <TextView
+                    style="?buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="boxClicked"
+                    android:textSize="50sp"
+                    android:typeface="monospace" />
+                
+            </TableRow>
+            
+        </TableLayout>
+	    
+	    <View
+			android:id="@+id/View_blue_player"
+			android:layout_width="match_parent"
+			android:layout_height="30dp"
+			android:gravity="center"
+			android:background="@color/blue" /> 
+
+	</LinearLayout>
+	
+	
+	<LinearLayout
+	    android:id="@+id/Layout_controls_bar"
+	    style="?buttonBarStyle"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="bottom|center_horizontal"
+	    android:background="@color/black_overlay"
+	    android:orientation="horizontal"
+	    android:divider="@drawable/divider_game_page_controls_bar" >
+	
+	    <Button
+	        android:id="@+id/Button_new"
+	        style="?buttonBarButtonStyle"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1" 
+	        android:text="@string/Button_new"
+	        android:onClick="newGame" />
+	    
+	    <Button
+	        android:id="@+id/Button_exit"
+	        style="?buttonBarButtonStyle"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="@string/Button_exit"
+	        android:onClick="exitApp" />
+	    
+	</LinearLayout>
+	
+</LinearLayout>
