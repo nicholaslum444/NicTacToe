@@ -41,7 +41,8 @@
                 android:layout_weight="1"
                 android:showDividers="middle"
                 android:gravity="center" 
-                android:divider="@drawable/divider_game_board_vertical" >
+                android:divider="@drawable/divider_game_board_vertical"
+                android:tag="0" >
 
                 <TextView
                     style="?buttonBarButtonStyle"
@@ -51,7 +52,8 @@
                     android:gravity="center"
                     android:onClick="boxClicked"
                     android:textSize="50sp"
-                    android:typeface="monospace" />
+                    android:typeface="monospace"
+                    android:tag="0" />
 
                 <TextView
                     style="?buttonBarButtonStyle"
@@ -61,7 +63,8 @@
                     android:gravity="center"
                     android:onClick="boxClicked"
                     android:textSize="50sp"
-                    android:typeface="monospace" />
+                    android:typeface="monospace"
+                    android:tag="1" />
                 
                 <TextView
                     style="?buttonBarButtonStyle"
@@ -71,7 +74,8 @@
                     android:gravity="center"
                     android:onClick="boxClicked"
                     android:textSize="50sp"
-                    android:typeface="monospace" />
+                    android:typeface="monospace"
+                    android:tag="2" />
                 
             </TableRow>
 
@@ -82,7 +86,8 @@
                 android:layout_weight="1"
                 android:showDividers="middle"
                 android:gravity="center" 
-                android:divider="@drawable/divider_game_board_vertical" >
+                android:divider="@drawable/divider_game_board_vertical"
+                android:tag="1" >
 
                 <TextView
                     style="?buttonBarButtonStyle"
@@ -92,7 +97,8 @@
                     android:gravity="center"
                     android:onClick="boxClicked"
                     android:textSize="50sp"
-                    android:typeface="monospace" />
+                    android:typeface="monospace"
+                    android:tag="0" />
 
                 <TextView
                     style="?buttonBarButtonStyle"
@@ -102,7 +108,8 @@
                     android:gravity="center"
                     android:onClick="boxClicked"
                     android:textSize="50sp"
-                    android:typeface="monospace" />
+                    android:typeface="monospace"
+                    android:tag="1" />
                 
                 <TextView
                     style="?buttonBarButtonStyle"
@@ -112,7 +119,8 @@
                     android:gravity="center"
                     android:onClick="boxClicked"
                     android:textSize="50sp"
-                    android:typeface="monospace" />
+                    android:typeface="monospace"
+                    android:tag="2" />
                 
             </TableRow>
             
@@ -123,7 +131,8 @@
                 android:layout_weight="1"
                 android:showDividers="middle"
                 android:gravity="center" 
-                android:divider="@drawable/divider_game_board_vertical" >
+                android:divider="@drawable/divider_game_board_vertical"
+                android:tag="2" >
 
                 <TextView
                     style="?buttonBarButtonStyle"
@@ -133,7 +142,8 @@
                     android:gravity="center"
                     android:onClick="boxClicked"
                     android:textSize="50sp"
-                    android:typeface="monospace" />
+                    android:typeface="monospace"
+                    android:tag="0" />
 
                 <TextView
                     style="?buttonBarButtonStyle"
@@ -143,7 +153,8 @@
                     android:gravity="center"
                     android:onClick="boxClicked"
                     android:textSize="50sp"
-                    android:typeface="monospace" />
+                    android:typeface="monospace"
+                    android:tag="1" />
                 
                 <TextView
                     style="?buttonBarButtonStyle"
@@ -153,7 +164,8 @@
                     android:gravity="center"
                     android:onClick="boxClicked"
                     android:textSize="50sp"
-                    android:typeface="monospace" />
+                    android:typeface="monospace"
+                    android:tag="2" />
                 
             </TableRow>
             
