@@ -125,6 +125,7 @@ public class GamePage extends Activity {
 		
 		filledBoxes++;
 		v.setClickable(false);
+		v.setOnClickListener(null);
 		
 		fillUpArray(v);
 		

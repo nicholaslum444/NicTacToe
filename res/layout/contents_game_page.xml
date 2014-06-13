@@ -66,6 +66,7 @@
                 android:tag="0" >
 
                 <TextView
+                    android:id="@+id/box00"
                     style="?buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -77,6 +78,7 @@
                     android:tag="0" />
 
                 <TextView
+                    android:id="@+id/box10"
                     style="?buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -88,6 +90,7 @@
                     android:tag="1" />
                 
                 <TextView
+                    android:id="@+id/box20"
                     style="?buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -111,6 +114,7 @@
                 android:tag="1" >
 
                 <TextView
+                    android:id="@+id/box01"
                     style="?buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -122,6 +126,7 @@
                     android:tag="0" />
 
                 <TextView
+                    android:id="@+id/box11"
                     style="?buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -133,6 +138,7 @@
                     android:tag="1" />
                 
                 <TextView
+                    android:id="@+id/box21"
                     style="?buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -156,6 +162,7 @@
                 android:tag="2" >
 
                 <TextView
+                    android:id="@+id/box02"
                     style="?buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -167,6 +174,7 @@
                     android:tag="0" />
 
                 <TextView
+                    android:id="@+id/box12"
                     style="?buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -178,6 +186,7 @@
                     android:tag="1" />
                 
                 <TextView
+                    android:id="@+id/box22"
                     style="?buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
