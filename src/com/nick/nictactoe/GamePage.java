@@ -1,9 +1,12 @@
 package com.nick.nictactoe;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
@@ -43,6 +46,7 @@ public class GamePage extends Activity {
 	boolean winColumn;
 	boolean winUpDiagonal;
 	boolean winDownDiagonal;
+	boolean gameEnded;
 	
 	Animation animation250;
 	Animation animation500;
@@ -52,8 +56,21 @@ public class GamePage extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.contents_game_page);
+		getActionBar().hide();
 		
+		winRow = false;
+		winColumn = false;
+		winUpDiagonal = false;
+		winDownDiagonal = false;
+		gameEnded = false;
+		filledBoxes = 0;
 		gameBoardArray = new int[3][3];
+		
+		if (currentPlayer == PLAYER_NONE) {
+			playerWhoStarted = PLAYER_RED;
+		}
+		
+		currentPlayer = playerWhoStarted;
 		
 		animation250 = new AlphaAnimation(1, 0); // Change alpha from fully visible to invisible
 	    animation250.setDuration(300); // duration - half a second
@@ -75,18 +92,6 @@ public class GamePage extends Activity {
 		layoutGameBoard.setAnimation(null);
 		layoutGameBoard.setClickable(true);
 		
-		if (currentPlayer == PLAYER_NONE) {
-			playerWhoStarted = PLAYER_RED;
-		}
-		
-		if (playerWhoStarted == PLAYER_RED) {
-			currentPlayer = PLAYER_RED;
-		} else if (playerWhoStarted == PLAYER_BLUE) {
-			currentPlayer = PLAYER_BLUE;
-		}
-		
-		filledBoxes = 0;
-		
 		flashPlayerColor();
 	}
 	
@@ -104,13 +109,20 @@ public class GamePage extends Activity {
 		}
 	}
 
+	@SuppressLint("InlinedApi")
 	@Override
 	protected void onResume() {
-		layoutPageContents.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+			layoutPageContents.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+		}
 		super.onResume();
 	}
 	
 	public void boxClicked(View v) {
+		if (gameEnded) {
+			return;
+		}
+		
 		filledBoxes++;
 		v.setClickable(false);
 		
@@ -130,7 +142,6 @@ public class GamePage extends Activity {
 		if (isCurrentPlayerWinner()) {
 			currentFlashing.setAnimation(null);
 			layoutGameBoard.startAnimation(animation500);
-			layoutGameBoard.setClickable(false);
 			
 			if (currentPlayer == PLAYER_RED) {
 				layoutGameBoard.setBackgroundColor(getResources().getColor(R.color.red_faded));
@@ -138,6 +149,7 @@ public class GamePage extends Activity {
 				layoutGameBoard.setBackgroundColor(getResources().getColor(R.color.blue_faded));
 			}
 			
+			gameEnded = true;
 			return;
 		}
 
@@ -146,6 +158,7 @@ public class GamePage extends Activity {
 			layoutGameBoard.startAnimation(animation500);
 			layoutGameBoard.setClickable(false);
 			layoutGameBoard.setBackgroundColor(getResources().getColor(R.color.grey_faded));
+			gameEnded = true;
 			return;
 		}
 		

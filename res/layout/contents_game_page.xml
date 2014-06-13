@@ -7,6 +7,27 @@
     android:orientation="vertical"
     android:keepScreenOn="true" >
     
+    <LinearLayout
+	    android:id="@+id/Layout_title_bar"
+	    style="?buttonBarStyle"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    android:gravity="center"
+	    android:background="@color/black_overlay"
+	    android:orientation="horizontal"
+	    android:divider="@drawable/divider_game_page_controls_bar" >
+	
+	    <TextView
+	        android:id="@+id/Textview_title"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/app_name"
+	        android:textSize="30sp"
+	        android:typeface="sans" />
+	    
+	</LinearLayout>
+    
 	<LinearLayout
 	    android:id="@+id/Layout_play_area"
 	    android:layout_width="match_parent"
